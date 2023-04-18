@@ -6,7 +6,7 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("./ex01/fig/pg_bg.jpg")
-    bg_imgs = [bg_img,bg_img]
+    bg_img2=pg.transform.flip(bg_img,True,False)
     koka_img = pg.image.load("./ex01/fig/3.png")
     koka_img = pg.transform.flip(koka_img,True,False)
     koka_imgs = []
@@ -44,7 +44,7 @@ def main():
         tmr += 1
         x=tmr%1600
         screen.blit(bg_img, [-x, 0])
-        screen.blit(bg_img,[1600-x,0])
+        screen.blit(bg_img2,[1600-x,0])
         screen.blit(koka_imgs[tmr%r], [300,200])
         pg.display.update()
         clock.tick(100)
